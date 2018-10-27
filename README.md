@@ -1,7 +1,5 @@
 
-#Convert Java object to / from JSON (Gson)
-
-PaseJsonUsingGson.java
+## Convert Java object to/from JSON (Gson)
 
 Gson Dependency
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
@@ -32,9 +30,7 @@ public UserInfo parseToPojo(String jsonString) {
 	}
 
 
-#Convert to jsong string using JSON/ parse JSON in Java
-
-PaseJsonUsingJSON.java
+## Convert to jsong string using JSON/ parse JSON in Java
 
 Gson Dependency
 <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
@@ -67,10 +63,10 @@ Gson Dependency
 		String jsonString = jo.toJSONString();
 		return jsonString;
 	}
-   
-# Convert json string to Java pojo classes   
+
+## References-
+### Convert json string to Java pojo classes   
 http://pojo.sodhanalibrary.com/
-
-#Online view json - json formater
-
+### Online view json - json formater
 http://jsonviewer.stack.hu/
+
