@@ -1,5 +1,7 @@
 package jsonparsing;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -31,13 +33,27 @@ public class PaseJsonUsingJSON {
 		jo.put("phoneNumbers", ja);
 
 		String jsonString = jo.toJSONString();
+
+		// writing JSON to file:"JSONExample.json" in cwd
+		PrintWriter pw;
+		try {
+			pw = new PrintWriter("json_example.json");
+			pw.write(jo.toJSONString());
+			pw.flush();
+			pw.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
 		return jsonString;
+
 	}
-	
+
 	public void readJson(String jsonString) {
-		JSONParser parser = new JSONParser(); try {
+		JSONParser parser = new JSONParser();
+		try {
 			JSONObject json = (JSONObject) parser.parse(jsonString);
-			//TODO read values from json string using one by one
+			// TODO read values from json string using one by one
 			System.out.print("\n\nreadJson JSON \n" + jsonString);
 		} catch (ParseException e) {
 			e.printStackTrace();
