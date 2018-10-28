@@ -1,5 +1,5 @@
 
-## Convert Java object to/from JSON (Gson)
+## Convert Java object to/from json (Gson)
 
 Gson Dependency
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
@@ -30,7 +30,7 @@ public UserInfo parseToPojo(String jsonString) {
 	}
 
 
-## Convert to jsong string using JSON/ parse JSON in Java
+## Convert json to/from Java object (JSON)
 
 Gson Dependency
 <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
