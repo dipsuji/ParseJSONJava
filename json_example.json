@@ -1,14 +1,1 @@
-{
-  "address": {
-    "street": "C-73"
-  },
-  "name": "Mat",
-  "phoneNumbers": [
-    {
-      "mobile": "898768****"
-    },
-    {
-      "mobile": "998763****"
-    }
-  ]
-}
+{"address":{"street":"B-453"},"name":"Harada","phoneNumbers":[{"mobile":"99887766**"},{"mobile":"88007766**"}]}

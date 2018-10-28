@@ -1,6 +1,13 @@
-
-## Convert Java object to/from JSON (Gson)
-
+## Convert to jsong string using JSON/ parse JSON in Java
+json Dependency
+<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+	
+## Convert Java object to/from JSON (Gson)	
 Gson Dependency
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 		<dependency>
@@ -9,60 +16,27 @@ Gson Dependency
 			<version>2.8.5</version>
 		</dependency>
 		
-Convert Java object to JSON-
-	public String parseToJson(UserInfo userInfoObject) {
 
-		Gson gson = new Gson();
-		String jsonString = gson.toJson(userInfoObject);
-		
-		return jsonString;
+		// example using JSON
+		// Step1 - a - convert java object to json string
+		ParseJsonUsingJSON parserJson = new ParseJsonUsingJSON();
+		String jsonString = parserJson.parseToJson(user);
+		System.out.print("Using JSON - JSON as string....\n" + jsonString);
 
-	}
-	
-Convert JSON to Java object
-public UserInfo parseToPojo(String jsonString) {
+		// Step1 - b - convert jsong string to java object
+		UserInfo originalObject = parserJson.parseToPojo(jsonString);
+		System.out.println("\n\nUsing JSON - JSON to java pojo class....\\n" + originalObject);
 
-		Gson gson = new Gson();
-		UserInfo userInfo = gson.fromJson(jsonString, UserInfo.class);
+		// Preferred approach- writing less code
+		// example using google gson
+		// Step2 a - java object to json string
+		ParseJsonUsingGson parser = new ParseJsonUsingGson();
+		String originalString = parser.parseToJson(user);
+		System.out.print("\n\nUsing Gson JSON as string....\n" + originalString);
 
-		return userInfo;
-
-	}
-
-
-## Convert to jsong string using JSON/ parse JSON in Java
-
-Gson Dependency
-<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
-		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>
-			<artifactId>json-simple</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-		
- public String writeJson() {
-		JSONObject jo = new JSONObject();
-		jo.put("name", "Mat");
-
-		Map<String, String> m = new LinkedHashMap<String, String>(4);
-		m.put("street", "C-73");
-		jo.put("address", m);
-
-		JSONArray ja = new JSONArray();
-
-		m = new LinkedHashMap<String, String>(2);
-		m.put("mobile", "898768****");
-		ja.add(m);
-
-		m = new LinkedHashMap<String, String>(2);
-		m.put("mobile", "998763****");
-		ja.add(m);
-
-		jo.put("phoneNumbers", ja);
-
-		String jsonString = jo.toJSONString();
-		return jsonString;
-	}
+		// Step2 - b - convert jsong string to java object
+		UserInfo userInfo = parser.parseToPojo(jsonString);
+		System.out.print("\n\nUsing Gson JSON to java pojo class....\n" + userInfo);
 
 ## References-
 ### Convert json string to Java pojo classes   
