@@ -1,4 +1,4 @@
-## Convert to jsong string using JSON/ parse JSON in Java
+## Convert java object to jsong string and jsong string to java object - JSON
 json Dependency
 <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
@@ -7,7 +7,7 @@ json Dependency
 			<version>1.1.1</version>
 		</dependency> 
 	
-## Convert Java object to/from JSON (Gson)	
+## Convert java object to jsong string and jsong string to java object - Gson
 Gson Dependency
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 		<dependency>
